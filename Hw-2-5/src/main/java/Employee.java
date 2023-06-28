@@ -1,0 +1,30 @@
+public class Employee {
+    public final String firstName;
+    public final String lastName;
+
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    public String getFirstName() {return  firstName; }
+
+    public String getLastName() {return lastName; }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                 ", lastName'" + lastName + '\'' +
+                 '}';
+    }
+    @Override
+    public boolean equals(object o) {
+        if (this == o) return  true;
+        if ( o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Object.equals(firstName, employee.firstName) && objects.equals(lastName, employee.lastName);
+
+    }
+    @Override
+    public int hashCode() {return Objects.hash(firstName, lastName);}
+}
